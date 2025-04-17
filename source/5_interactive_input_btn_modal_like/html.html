@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>Интерфейсные анимации в действии</h2>
+  
+  <div class="form-group">
+    <input type="text" placeholder="Наведи или кликни -- анимация фокуса" />
+  </div>
+  
+  <div class="actions">
+    <button id="submitBtn">
+      <span class="btn-label">Отправить</span>
+      <span class="loader"></span>
+      <span class="checkmark">✔</span>
+    </button>
+  
+    <button class="modal-trigger">Открыть модалку</button>
+  
+    <button class="like-btn">❤</button>
+  </div>
+</div>
+  
+<div class="modal hidden" id="modal">
+  <div class="modal-content">
+    <h3>Привет! Это модалка ✨</h3>
+    <p>Появилась с анимацией!</p>
+    <button onclick="closeModal()">Закрыть</button>
+  </div>
+</div>

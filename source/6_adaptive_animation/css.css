@@ -1,0 +1,49 @@
+body {
+  font-family: sans-serif;
+  padding: 60px 20px;
+  background: #f3f3f3;
+  display: flex;
+  justify-content: center;
+}
+  
+.animated-box {
+  background: #e6001f;
+  color: white;
+  padding: 20px 40px;
+  border-radius: 12px;
+  font-size: 20px;
+  animation: bounce 1.5s infinite;
+}
+  
+/* Анимация по умолчанию -- подпрыгивание */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+  
+/* На узких экранах -- другая анимация */
+@media (max-width: 1000px) {
+  .animated-box {
+    animation: sway 1.5s infinite;
+  }
+  
+  @keyframes sway {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(5deg);
+    }
+  }
+}
+  
+/* Если пользователь включил «уменьшить анимацию» */
+@media (prefers-reduced-motion: reduce) {
+  .animated-box {
+    animation: none;
+  }
+}

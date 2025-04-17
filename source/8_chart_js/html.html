@@ -1,0 +1,24 @@
+<div class="chart-controls">
+  <label for="chartType">Тип графика:</label>
+  <select id="chartType">
+    <option value="line" selected>Линия</option>
+    <option value="bar">Столбцы</option>
+    <option value="radar">Радар</option>
+    <option value="pie">Пирог</option>
+  </select>
+  
+  <div class="month-inputs">
+    <label>Янв: <input type="number" data-month="0" value="120" /></label>
+    <label>Фев: <input type="number" data-month="1" value="190" /></label>
+    <label>Мар: <input type="number" data-month="2" value="300" /></label>
+    <label>Апр: <input type="number" data-month="3" value="500" /></label>
+    <label>Май: <input type="number" data-month="4" value="400" /></label>
+    <label>Июн: <input type="number" data-month="5" value="650" /></label>
+  </div>
+  
+  <button id="updateChart">Обновить</button>
+</div>
+  
+<div class="chart-container">
+  <canvas id="animatedChart"></canvas>
+</div>  

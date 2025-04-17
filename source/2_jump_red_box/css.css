@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+}
+  
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: #e6001f;
+  border-radius: 8px;
+  position: relative;
+  animation: bounce 1s infinite ease-in-out;
+}
+  
+@keyframes bounce {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -30px;
+  }
+  100% {
+    top: 0;
+  }
+}

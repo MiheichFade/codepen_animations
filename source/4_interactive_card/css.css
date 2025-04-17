@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  height: 200vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  font-family: sans-serif;
+}
+  
+.card {
+  width: 320px;
+  padding: 24px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: transform;
+  cursor: pointer;
+  perspective: 1000px;
+}
+  
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+  
+.card h2 {
+  font-size: 20px;
+  margin: 0 0 16px;
+}
+  
+.card p {
+  font-size: 14px;
+  color: #444;
+  margin: 8px 0;
+}
+  
+.card button {
+  margin-top: 12px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #e6001f;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+  
+.card button:hover {
+  background-color: #c00019;
+}
+  
+/* Вспышка */
+.card.flash {
+  animation: flash 0.4s ease;
+}
+  
+@keyframes flash {
+  0% {
+    box-shadow: 0 0 0px #e6001f;
+  }
+  50% {
+    box-shadow: 0 0 32px #e6001f66;
+  }
+  100% {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  }
+}

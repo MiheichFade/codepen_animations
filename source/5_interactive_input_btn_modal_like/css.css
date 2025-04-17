@@ -1,0 +1,154 @@
+body {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  background: #f9f9f9;
+}
+  
+.container {
+  text-align: center;
+  max-width: 500px;
+}
+  
+input {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 16px;
+  transition: box-shadow 0.3s ease, border 0.3s ease, background 0.3s ease;
+  background: #fff;
+}
+  
+input:hover {
+  background: #f1f1f1;
+}
+  
+input:focus {
+  outline: none;
+  border-color: #e6001f;
+  box-shadow: 0 0 0 4px rgba(230, 0, 31, 0.2);
+  background: #fff;
+}
+  
+button {
+  padding: 10px 16px;
+  margin: 10px 6px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #eee;
+  transition: all 0.3s ease;
+  position: relative;
+}
+  
+button:hover {
+  transform: scale(1.05);
+  background: #ddd;
+}
+  
+.like-btn {
+  background: none;
+  font-size: 24px;
+  color: #888;
+  transition: color 0.3s ease;
+}
+  
+.like-btn.liked {
+  color: #e6001f;
+}
+  
+button#submitBtn {
+  background: #e6001f;
+  color: white;
+  width: 140px;
+  overflow: hidden;
+  height: 44px;
+}
+  
+#submitBtn .btn-label {
+  transition: opacity 0.3s ease;
+}
+  
+#submitBtn.loading .btn-label,
+#submitBtn.success .btn-label {
+  opacity: 0;
+}
+  
+#submitBtn .loader,
+#submitBtn .checkmark {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+}
+  
+#submitBtn.loading .loader {
+  display: block;
+  opacity: 1;
+}
+  
+#submitBtn.success .checkmark {
+  display: block;
+  opacity: 1;
+  font-size: 20px;
+}
+  
+.loader {
+  width: 20px;
+  height: 20px;
+  border: 3px solid white;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+  
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+  
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  pointer-events: all;
+  z-index: 10;
+}
+  
+.modal.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+  
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  animation: modalIn 0.4s ease both;
+  transform: translateY(20px);
+}
+  
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
