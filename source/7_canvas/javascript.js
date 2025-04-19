@@ -1,5 +1,5 @@
-const canvas = document.getElementById('magicCanvas');
-const ctx = canvas.getContext('2d');
+const canvas = document.getElementById("magicCanvas");
+const ctx = canvas.getContext("2d");
 let width, height;
 let particles = [];
 
@@ -7,7 +7,7 @@ function resize() {
   width = canvas.width = window.innerWidth;
   height = canvas.height = window.innerHeight;
 }
-window.addEventListener('resize', resize);
+window.addEventListener("resize", resize);
 resize();
 
 class Particle {
@@ -44,21 +44,23 @@ function createExplosion(x, y) {
     const vx = Math.cos(angle) * speed;
     const vy = Math.sin(angle) * speed;
     const size = Math.random() * 4 + 1;
-    const color = `255, ${Math.floor(Math.random()*155+100)}, ${Math.floor(Math.random()*200+55)}`;
+    const color = `255, ${Math.floor(Math.random() * 155 + 100)}, ${Math.floor(
+      Math.random() * 200 + 55
+    )}`;
     particles.push(new Particle(x, y, vx, vy, size, color, 100));
   }
 }
 
-canvas.addEventListener('click', (e) => {
+canvas.addEventListener("click", (e) => {
   createExplosion(e.clientX, e.clientY);
 });
 
 function animate() {
-  ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
+  ctx.fillStyle = "rgba(249, 249, 249, 0.2)";
   ctx.fillRect(0, 0, width, height);
 
-  particles = particles.filter(p => p.life > 0);
-  particles.forEach(p => {
+  particles = particles.filter((p) => p.life > 0);
+  particles.forEach((p) => {
     p.update();
     p.draw(ctx);
   });
